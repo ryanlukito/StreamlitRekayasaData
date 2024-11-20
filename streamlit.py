@@ -4,9 +4,10 @@ import plotly.express as px
 import psycopg2
 import statsmodels.api as sm
 from dotenv import load_dotenv, dotenv_values
+import os
 
 load_dotenv()
-database_url = dotenv_values('.env')['AIVEN_CONN']
+database_url = os.environ.get('AIVEN_CONN')
 # Connect to the database
 with st.spinner("Connecting to Database..."):
     try:
